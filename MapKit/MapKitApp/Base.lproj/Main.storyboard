@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eI3-po-ZMV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbu-5w-Xlt">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="横浜" id="3W9-Y0-SnL">
+                                        <connections>
+                                            <action selector="gotoSpot:" destination="BYZ-38-t0r" id="QQm-4c-UtD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" style="plain" id="Z48-g3-5qL">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="beC-4X-nH7">
+                                            <rect key="frame" x="66" y="10.5" width="253" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="地図" width="50"/>
+                                                <segment title="写真" width="50"/>
+                                                <segment title="地図＋写真" width="100"/>
+                                                <segment title="3D" width="50"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changedMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="kr9-9M-lCX"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zbu-5w-Xlt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Qw-et-eGq"/>
+                            <constraint firstAttribute="trailing" secondItem="zbu-5w-Xlt" secondAttribute="trailing" id="CJp-eX-MqJ"/>
+                            <constraint firstItem="zbu-5w-Xlt" firstAttribute="trailing" secondItem="eI3-po-ZMV" secondAttribute="trailing" id="DSc-15-whv"/>
+                            <constraint firstItem="eI3-po-ZMV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XlT-wk-xQf"/>
+                            <constraint firstItem="zbu-5w-Xlt" firstAttribute="leading" secondItem="eI3-po-ZMV" secondAttribute="leading" id="qwY-Gi-wQg"/>
+                            <constraint firstItem="zbu-5w-Xlt" firstAttribute="bottom" secondItem="eI3-po-ZMV" secondAttribute="bottom" id="uWo-91-WF1"/>
+                            <constraint firstAttribute="bottom" secondItem="zbu-5w-Xlt" secondAttribute="bottom" id="woZ-SP-Thf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMap" destination="eI3-po-ZMV" id="BOG-Ob-PN9"/>
+                        <outlet property="toolBar" destination="zbu-5w-Xlt" id="bZH-7e-pyy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
